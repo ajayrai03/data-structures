@@ -1,0 +1,38 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        
+        // dutch flag algorithm
+
+
+        // low -it tells us position where 0 should go
+        // mid- it is the current element
+        // high- it tell us position where 2 should go
+        
+        int low=0;
+        int mid=0;
+        int high=nums.length-1;
+        while(mid<=high){
+            if(nums[mid]==0){
+                 // swap low to mid
+                 int temp=nums[low];
+                 nums[low]=nums[mid];
+                 nums[mid]=temp;
+                        low++;
+                        mid++;
+                        }
+                                    
+            else if(nums[mid]==1){
+                // increase mid
+                mid++;
+
+            }
+            else if(nums[mid]==2){
+                // swap mid to high
+                int temp=nums[mid];
+                nums[mid]=nums[high];
+                nums[high]=temp;
+                high--;
+            }
+        }
+    }
+}
