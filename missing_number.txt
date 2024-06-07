@@ -1,3 +1,6 @@
+// first we add all element from 1 to n in sum variable and then 
+added array element in sum2 variable and sum1-sum2 to get result
+
 class Solution {
     public int missingNumber(int[] nums) {
         
