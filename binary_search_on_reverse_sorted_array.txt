@@ -1,0 +1,25 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr={7,6,5,4,3,1};
+        int target=8;
+        int idx = bsorsa(arr,target);
+        System.out.println(idx);
+    }
+    public static int bsorsa(int[] nums,int target){
+        int low=0;
+        int high=nums.length-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            else if(target<nums[mid]){
+                low=mid+1;
+            }
+            else{
+                high=mid-1;
+            }
+        }
+        return -1;
+    }
+}
